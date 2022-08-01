@@ -1,9 +1,4 @@
-#include <assert.h>
-
-int rangeCount[3] = {0};
-int ranges = 0;
-int chrgSession[] = {3, 3, 5, 4, 10, 11, 12};
-int sizeOfchrgSess = sizeof(chrgSession) / sizeof(chrgSession[0]);
+#include <chkRanges.h>
 
 int *chkrange() {
     return printRange(chrgSession,sizeOfchrgSess);
@@ -29,13 +24,4 @@ void printRange(int *array, int size)
     for(index=0; index<=ranges; index++) {
             printf("count is %d\n", rangeCount);
     }
-}
-
-int main()
-{
-    assert(*(chkrange+4) == 3);
-    assert(*(chkrange+5) == 5);
-    assert(*(chkrange+6) == 4);
-    assert(*(chkrange+11) == 2);  
-    return 0;
 }
