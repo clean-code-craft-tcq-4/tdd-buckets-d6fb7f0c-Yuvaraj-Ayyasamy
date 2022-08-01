@@ -1,7 +1,7 @@
 #include <chkRanges.h>
 
 int *chkrange() {
-    return printRange(chrgSession,sizeOfchrgSess);
+    return checkRange(chrgSession,sizeOfchrgSess);
 }
 
 int *checkRange(int *array, int size)
@@ -15,10 +15,11 @@ int *checkRange(int *array, int size)
             ranges++;
         }
     }
+    printRange();
     return rangeCount;
 }
 
-void printRange(int *array, int size)
+void printRange()
 {  
     int index;
     for(index=0; index<=ranges; index++) {
