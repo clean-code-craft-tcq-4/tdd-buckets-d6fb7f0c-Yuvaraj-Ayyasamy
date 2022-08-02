@@ -20,7 +20,7 @@ int main()
     assert((testArray[0]==20) && (testArray[1]==30) && (testArray[2]==40) && (testArray[3]==50));
     //printRange(testArray, testArraySize-1);
 
-    rangeCount = checkRange(chargeSession, chargeSessionSize);
+    checkRange(chargeSession, chargeSessionSize);
     //assert(rangeCount[0] == 4);
     //assert(rangeCount[1] == 4);
     printRange(rangeCount, ranges);
