@@ -3,8 +3,10 @@
 int main()
 {
     int testValue1 = 10, testValue2 = 20;
-    int testArray[] = {30, 10, 40, 20};
+    int testArray[] = {30, 10, 20};
     int testArraySize = sizeof(testArray)/sizeof(testArray[0]);
+    int testArray1[] = {30, 50, 40, 20};
+    int testArray1Size = sizeof(testArray1)/sizeof(testArray1[0]);
     int chargeSession[] = {3, 3, 5, 4, 10, 11, 12, 11};
     int chargeSessionSize = sizeof(chargeSession)/sizeof(chargeSession[0]);
 
@@ -12,12 +14,11 @@ int main()
     assert((testValue1==20) && (testValue2==10));
 
     partition(testArray, 0, testArraySize-1);
-    //assert((testArray[0]==10) && (testArray[1]==20));
-    printRange(testArray, testArraySize-1);
+    assert((testArray[0]==10) && (testArray[1]==20));
+    //printRange(testArray, testArraySize-1);
 
-    testArray[0] = 50;
-    sortRange(testArray, 0, testArraySize);
-    //assert((testArray[0]==20) && (testArray[1]==30) && (testArray[2]==40) && (testArray[3]==50));
+    sortRange(testArray1, 0, testArray1Size-1);
+    assert((testArray1[0]==20) && (testArray1[1]==30) && (testArray1[2]==40) && (testArray1[3]==50));
     printRange(testArray, testArraySize-1);
 
     checkRange(chargeSession, chargeSessionSize);
