@@ -3,18 +3,18 @@
 int main()
 {
     int testValue1 = 10, testValue2 = 20;
-    int testArray[] = {30, 10, 20};
+    int testArray[] = {30, 10, 40, 20};
     int testArraySize = sizeof(testArray)/sizeof(testArray[0]);
 
     swapValues(&testValue1, &testValue2);
     assert((testValue1==20) && (testValue2==10));
 
     partition(testArray, 0, testArraySize-1);
-    //assert((testArray[0]==10) && (testArray[1]==20) && (testArray[2]==30));
-    printRange(testArray, testArraySize-2);
+    assert((testArray[0]==10) && (testArray[1]==30));
+    printRange(testArray, testArraySize-3);
 
     sortRange(testArray, 0, testArraySize);
-    //assert((testArray[0]==10) && (testArray[1]==20) && (testArray[2]==30));
+    assert((testArray[0]==10) && (testArray[1]==20) && (testArray[2]==30) && (testArray[2]==40));
     printRange(testArray, testArraySize-1);
 
     chkrange();
