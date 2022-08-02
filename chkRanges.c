@@ -7,7 +7,9 @@ int rangeCount[3] = {0};
 void chkrange() {
     int sizeOfchrgSess = sizeof(chrgSession) / sizeof(chrgSession[0]);
     sortRange(chrgSession, 0, sizeOfchrgSess);
+    printRange(chrgSession, sizeOfchrgSess);
     checkRange(chrgSession,sizeOfchrgSess);
+    printRange(rangeCount, ranges);
 }
 
 void swapValues(int* value1, int* value2) 
@@ -41,7 +43,7 @@ void sortRange(int array[], int lowIndex, int highIndex)
     }
 } 
 
-int *checkRange(int *array, int size)
+int *checkRange(int array[], int size)
 {  
     int index;
     for(index=0; index<size; index++) {
@@ -52,14 +54,13 @@ int *checkRange(int *array, int size)
             ranges++;
         }
     }
-    printRange();
+    printRange(rangeCount, ranges);
     return rangeCount;
 }
 
-void printRange()
+void printRange(int array[], int size)
 {  
-    int index;
-    for(index=0; index<=ranges; index++) {
+    for(int =0; index<=size; index++) {
             printf("count[%d] is %d\n", index, rangeCount[index]);
     }
 }
