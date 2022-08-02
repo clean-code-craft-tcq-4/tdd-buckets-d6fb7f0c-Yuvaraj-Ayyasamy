@@ -5,17 +5,25 @@ int main()
     int testValue1 = 10, testValue2 = 20;
     int testArray[] = {30, 10, 40, 20};
     int testArraySize = sizeof(testArray)/sizeof(testArray[0]);
+    int chargeSession[] = {3, 3, 5, 4, 10, 11, 12, 11};
+    int chargeSessionSize = sizeof(chargeSession)/sizeof(chargeSession[0]);
 
     swapValues(&testValue1, &testValue2);
     assert((testValue1==20) && (testValue2==10));
 
     partition(testArray, 0, testArraySize-1);
-    //assert((testArray[0]==10) && (testArray[1]==30));
-    printRange(testArray, testArraySize-1);
+    assert((testArray[0]==10) && (testArray[1]==20));
+    //printRange(testArray, testArraySize-1);
 
+    testArray[0] = 50;
     sortRange(testArray, 0, testArraySize);
-    //assert((testArray[0]==10) && (testArray[1]==20) && (testArray[2]==30) && (testArray[3]==40));
-    printRange(testArray, testArraySize-1);
+    assert((testArray[0]==20) && (testArray[1]==30) && (testArray[2]==40) && (testArray[3]==50));
+    //printRange(testArray, testArraySize-1);
+
+    rangeCount = checkRange(chargeSession, chargeSessionSize);
+    //assert(rangeCount[0] == 4);
+    //assert(rangeCount[1] == 4);
+    printRange(rangeCount, ranges);
 
     chkrange();
     assert(rangeCount[0] == 4);
