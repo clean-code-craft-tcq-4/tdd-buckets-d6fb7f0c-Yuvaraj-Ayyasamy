@@ -11,7 +11,7 @@ int main()
     
     partition(testArray, 0, testArraySize);
     //assert((testArray[0]==10) && (testArray[1]==20) && (testArray[2]==30));
-    printRange(testArray, testArraySize);
+    printRange(testArray, testArraySize-1);
     
     chkrange();
     assert(rangeCount[0] == 4);
