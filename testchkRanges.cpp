@@ -2,9 +2,9 @@
 
 int main()
 {
-    assert(*(rangeCount+4) == 3);
-    assert(*(rangeCount+5) == 5);
-    assert(*(rangeCount+6) == 4);
-    assert(*(rangeCount+11) == 2);  
+    assert(*(rangeCount+0) == 4);
+    assert(*(rangeCount+1) == 3);
+    assert(*(rangeCount+2) == 0);
+    //assert(*(rangeCount+) == 2);  
     return 0;
 }
