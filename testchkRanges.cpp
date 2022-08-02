@@ -21,7 +21,7 @@ int main()
     assert((testArray1[0]==20) && (testArray1[1]==30) && (testArray1[2]==40) && (testArray1[3]==50));
     //printRange(testArray, testArraySize-1);
 
-    checkRange(chargeSession, chargeSessionSize);
+    //checkRange(chargeSession, chargeSessionSize);
     //assert(rangeCount[0] == 4);
     //assert(rangeCount[1] == 4);
     //printRange(rangeCount, 3);
