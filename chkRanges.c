@@ -6,8 +6,8 @@ int rangeCount[3] = {0};
 
 void chkrange() {
     int sizeOfchrgSess = sizeof(chrgSession) / sizeof(chrgSession[0]);
-    sortRange(chrgSession, 0, sizeOfchrgSess);
-    printRange(chrgSession, sizeOfchrgSess);
+    sortRange(chrgSession, 0, sizeOfchrgSess-1);
+    printRange(chrgSession, sizeOfchrgSess-1);
     checkRange(chrgSession,sizeOfchrgSess);
     printRange(rangeCount, ranges);
 }
