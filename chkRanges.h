@@ -1,3 +1,4 @@
+#include <stdio.h>
 #include <assert.h>
 
 int rangeCount[3] = {0};
