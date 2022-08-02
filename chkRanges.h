@@ -3,6 +3,6 @@
 
 extern int rangeCount[];
 
-int *chkrange();
+void chkrange();
 int *checkRange(int *array, int size);
 void printRange();
