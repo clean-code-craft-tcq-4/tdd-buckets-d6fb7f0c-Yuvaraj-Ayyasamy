@@ -23,6 +23,6 @@ void printRange()
 {  
     int index;
     for(index=0; index<=ranges; index++) {
-            printf("count is %d\n", rangeCount);
+            printf("count is %d\n", rangeCount[index]);
     }
 }
