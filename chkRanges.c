@@ -46,6 +46,7 @@ void sortRange(int array[], int lowIndex, int highIndex)
 void checkRange(int array[], int size)
 {  
     int index;
+    rangeCount[] = {1};
     for(index=0; index<size; index++) {
         if ((array[index+1] == (array[index] + 1)) || (array[index+1] == array[index])) {
             rangeCount[ranges] += 1;
@@ -54,7 +55,7 @@ void checkRange(int array[], int size)
             ranges++;
         }
     }
-    //printRange(rangeCount, ranges);
+    printRange(rangeCount, ranges);
 }
 
 void printRange(int array[], int size)
