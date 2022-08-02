@@ -7,7 +7,7 @@ int rangeCount[3] = {1, 1, 1};
 void chkrange() {
     int sizeOfchrgSess = sizeof(chrgSession) / sizeof(chrgSession[0]);
     sortRange(chrgSession, 0, sizeOfchrgSess-1);
-    checkRange(chrgSession,sizeOfchrgSess);
+    checkRange(chrgSession, sizeOfchrgSess);
 }
 
 void swapValues(int* value1, int* value2) 
