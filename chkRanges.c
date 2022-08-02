@@ -5,8 +5,8 @@ int chrgSession[] = {3, 3, 5, 4, 10, 11, 12};
 int sizeOfchrgSess = sizeof(chrgSession) / sizeof(chrgSession[0]);
 int rangeCount[3] = {0};
 
-int *chkrange() {
-    return checkRange(chrgSession,sizeOfchrgSess);
+void chkrange() {
+    checkRange(chrgSession,sizeOfchrgSess);
 }
 
 int *checkRange(int *array, int size)
