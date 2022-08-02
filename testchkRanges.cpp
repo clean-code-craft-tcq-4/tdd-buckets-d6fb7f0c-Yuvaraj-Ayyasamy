@@ -23,7 +23,7 @@ int main()
     checkRange(chargeSession, chargeSessionSize);
     //assert(rangeCount[0] == 4);
     //assert(rangeCount[1] == 4);
-    printRange(rangeCount, ranges);
+    printRange(rangeCount, 3);
 
     chkrange();
     assert(rangeCount[0] == 4);
