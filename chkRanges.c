@@ -17,7 +17,7 @@ void swapValues(int* value1, int* value2)
     *value2 = temp; 
 }   
 
-int partition (int array[], int lowIndex, int highIndex) 
+int partition(int array[], int lowIndex, int highIndex) 
 { 
     int pivotElement = array[highIndex];
     int i = (lowIndex - 1);
@@ -36,8 +36,8 @@ void sortRange(int array[], int lowIndex, int highIndex)
     if (lowIndex < highIndex) {
         int pivot = partition(array, lowIndex, highIndex);
         // Separately sort elements before & after partition
-        quickSort(array, lowIndex, pivot - 1);
-        quickSort(array, pivot + 1, highIndex);
+        sortRange(array, lowIndex, pivot - 1);
+        sortRange(array, pivot + 1, highIndex);
     }
 } 
 
