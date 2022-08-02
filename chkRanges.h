@@ -2,6 +2,8 @@
 #include <assert.h>
 
 extern int rangeCount[];
+extern int chrgSession[];
+extern int rangeCount[];
 
 void chkrange();
 void checkRange(int array[], int size);
