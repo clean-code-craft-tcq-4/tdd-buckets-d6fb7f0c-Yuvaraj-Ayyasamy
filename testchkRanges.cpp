@@ -19,7 +19,7 @@ int main()
 
     sortRange(testArray1, 0, testArray1Size-1);
     assert((testArray1[0]==20) && (testArray1[1]==30) && (testArray1[2]==40) && (testArray1[3]==50));
-    printRange(testArray, testArraySize-1);
+    //printRange(testArray, testArraySize-1);
 
     checkRange(chargeSession, chargeSessionSize);
     //assert(rangeCount[0] == 4);
