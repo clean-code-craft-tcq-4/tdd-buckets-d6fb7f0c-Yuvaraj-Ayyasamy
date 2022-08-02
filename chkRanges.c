@@ -60,7 +60,7 @@ int *checkRange(int array[], int size)
 
 void printRange(int array[], int size)
 {  
-    for(int =0; index<=size; index++) {
-            printf("count[%d] is %d\n", index, rangeCount[index]);
+    for(int index =0; index<=size; index++) {
+            printf("count[%d] is %d\n", index, array[index]);
     }
 }
