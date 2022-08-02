@@ -24,5 +24,12 @@ int main()
     assert(rangeCount[1] == 3);
     assert(rangeCount[2] == 1);
     //printRange(rangeCount, 3);
+
+    checkRange(chrgSession,sizeOfchrgSess);
+    assert(rangeCount[0] == 4);
+    assert(rangeCount[1] == 3);
+    assert(rangeCount[2] == 1);
+    //printRange(rangeCount, 3);
+
     return 0;
 }
