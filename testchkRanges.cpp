@@ -4,7 +4,7 @@ int main()
 {
     int testValue1 = 10, testValue2 = 20;
     int testArray[] = {30, 10, 20};
-    int testArraySize = sizeof(testarray)/sizeof(testarray[0]);
+    int testArraySize = sizeof(testArray)/sizeof(testArray[0]);
     
     swapValues(&testValue1, &testValue2);
     assert((testValue1==20) && (testValue2==10));
