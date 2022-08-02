@@ -2,6 +2,7 @@
 
 int main()
 {
+    chkrange();
     assert(*(rangeCount+0) == 4);
     assert(*(rangeCount+1) == 3);
     assert(*(rangeCount+2) == 0);
