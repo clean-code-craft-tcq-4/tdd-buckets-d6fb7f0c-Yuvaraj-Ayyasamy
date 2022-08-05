@@ -66,7 +66,7 @@ void addInExcel(int array[])
 {
     FILE *fp;
     FILE *fp1;
-    fp = fopen("Record.csv","a");
+    fp = fopen("Record.csv","w");
     s.id = 0;
     sprintf(s.range,"%d-%d\n", chrgSession[0], chrgSession[3]);
     s.count = array[0];
