@@ -14,8 +14,8 @@ void chkrange() {
     int sizeOfchrgSess = sizeof(chrgSession) / sizeof(chrgSession[0]);
     sortRange(chrgSession, 0, sizeOfchrgSess-1);
     checkRange(chrgSession, sizeOfchrgSess);
-    printRange(chrgSession, sizeOfchrgSess-1);
-    addInExcel(chrgSession, sizeOfchrgSess-1);
+    printRange(rangeCount, 2);
+    addInExcel(rangeCount, 2);
 }
 
 void swapValues(int* value1, int* value2) 
@@ -66,7 +66,7 @@ void addInExcel(int array[], int size)
 {
     FILE *fp;
     int temp = 0;
-    //FILE *fp1;
+    FILE *fp1;
     fp = fopen("Record.csv","a");
     for(int index =0; index<size; index++) {
         s.id = index;
@@ -78,13 +78,13 @@ void addInExcel(int array[], int size)
     fclose(fp);
     printf("\n\n\t\tData Added Sucessfully");
 
-   /* fp1 = fopen("Record.xlsx","r");
-    printf("\n\tRoll_No\t\tName\t\tAddress\n\n\n");
+   fp1 = fopen("Record.xlsx","r");
+    printf("\n\tIndex\t\tRange\t\tCount\n\n\n");
     while (fread(&s, sizeof(s), 1, fp1))
     {
-        printf("\t%d\t\t%s\t\t%s\n",s.id,s.name,s.address);
+        printf("\t%d\t\t%s\t\t%d\n",s.id,s.range,s.count);
     }
-    fclose(fp1);*/
+    fclose(fp1);
 }
 void printRange(int array[], int size)
 {  
