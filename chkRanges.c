@@ -15,6 +15,7 @@ void chkrange() {
     sortRange(chrgSession, 0, sizeOfchrgSess-1);
     checkRange(chrgSession, sizeOfchrgSess);
     printRange(chrgSession, sizeOfchrgSess-1);
+    addInExcel(chrgSession, sizeOfchrgSess-1);
 }
 
 void swapValues(int* value1, int* value2) 
@@ -64,12 +65,14 @@ void checkRange(int array[], int size)
 void addInExcel(int array[], int size)
 {
     FILE *fp;
+    int temp = 0;
     //FILE *fp1;
     fp = fopen("Record.csv","a");
-    for(int index =0; index<=size; index++) {
+    for(int index =0; index<size; index++) {
         s.id = index;
-        sprintf(s.count,"%d - %d\n", chrgSession[index], chrgSession[index]);
+        sprintf(s.count,"%d - %d\n", chrgSession[temp], chrgSession[temp + array[index]]);
         s.count = array[index];
+        temp = array[index]
     }
     fwrite(&s, sizeof(s), 1, fp);
     fclose(fp);
