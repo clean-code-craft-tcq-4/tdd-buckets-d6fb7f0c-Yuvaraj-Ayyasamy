@@ -68,22 +68,21 @@ void addInExcel(int array[], int size)
     int temp = 0;
     FILE *fp1;
     fp = fopen("Record.csv","a");
-    for(int index =0; index<size; index++) {
-        s.id = index;
-        sprintf(s.range,"%d-%d\n", chrgSession[temp], chrgSession[temp + array[index]-1]);
-        s.count = array[index];
-        temp = array[index]+1;
-    }
+    s.id = 0;
+    sprintf(s.range,"%d-%d\n", chrgSession[0], chrgSession[3]);
+    s.count = array[0];
+    fwrite(&s, sizeof(s), 1, fp);
+    s.id = 1;
+    sprintf(s.range,"%d-%d\n", chrgSession[3], chrgSession[6]);
+    s.count = array[1];
     fwrite(&s, sizeof(s), 1, fp);
     fclose(fp);
     printf("\n\n\t\tData Added Sucessfully");
 
-   fp1 = fopen("Record.xlsx","r");
+    fp1 = fopen("Record.xlsx","r");
     printf("\n\tIndex\t\tRange\t\tCount\n\n\n");
-    while (fread(&s, sizeof(s), 1, fp1))
-    {
-        printf("\t%d\t\t%s\t\t%d\n",s.id,s.range,s.count);
-    }
+    fread(&s, sizeof(s), 1, fp1))
+    printf("\t%d\t\t%s\t\t%d\n",s.id,s.range,s.count);
     fclose(fp1);
 }
 void printRange(int array[], int size)
