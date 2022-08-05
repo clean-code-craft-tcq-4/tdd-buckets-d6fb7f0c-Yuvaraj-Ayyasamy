@@ -8,6 +8,7 @@ void chkrange() {
     int sizeOfchrgSess = sizeof(chrgSession) / sizeof(chrgSession[0]);
     sortRange(chrgSession, 0, sizeOfchrgSess-1);
     checkRange(chrgSession, sizeOfchrgSess);
+    printRange(chrgSession, sizeOfchrgSess-1);
 }
 
 void swapValues(int* value1, int* value2) 
