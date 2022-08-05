@@ -3,6 +3,12 @@
 int ranges = 0;
 int chrgSession[] = {3, 3, 5, 4, 10, 11, 12};
 int rangeCount[3] = {1, 1, 1};
+struct data
+{
+    int id;
+    char range[10];
+    int count;
+}s;
 
 void chkrange() {
     int sizeOfchrgSess = sizeof(chrgSession) / sizeof(chrgSession[0]);
@@ -55,9 +61,31 @@ void checkRange(int array[], int size)
     }
 }
 
+void addInExcel(int array[], int size)
+{
+    FILE *fp;
+    //FILE *fp1;
+    fp = fopen("Record.csv","a");
+    for(int index =0; index<=size; index++) {
+        s.id = index;
+        sprintf(s.count,"%d - %d\n", chrgSession[index], chrgSession[index]);
+        s.count = array[index];
+    }
+    fwrite(&s, sizeof(s), 1, fp);
+    fclose(fp);
+    printf("\n\n\t\tData Added Sucessfully");
+
+   /* fp1 = fopen("Record.xlsx","r");
+    printf("\n\tRoll_No\t\tName\t\tAddress\n\n\n");
+    while (fread(&s, sizeof(s), 1, fp1))
+    {
+        printf("\t%d\t\t%s\t\t%s\n",s.id,s.name,s.address);
+    }
+    fclose(fp1);*/
+}
 void printRange(int array[], int size)
 {  
     for(int index =0; index<=size; index++) {
-            printf("count[%d] is %d\n", index, array[index]);
+        printf("count[%d] is %d\n", index, array[index]);
     }
 }
