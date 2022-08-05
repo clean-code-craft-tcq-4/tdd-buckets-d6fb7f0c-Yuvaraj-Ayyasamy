@@ -78,11 +78,11 @@ void addInExcel(int array[])
     fclose(fp);
     printf("\n\n\t\tData Added Sucessfully");
 
-    fp1 = fopen("Record.xlsx","r");
+/*    fp1 = fopen("Record.xlsx","r");
     printf("\n\tIndex\t\tRange\t\tCount\n\n\n");
     fread(&s, sizeof(s), 1, fp1);
     printf("\t%d\t\t%s\t\t%d\n",s.id,s.range,s.count);
-    fclose(fp1);
+    fclose(fp1);*/
 }
 void printRange(int array[], int size)
 {  
