@@ -70,7 +70,7 @@ void addInExcel(int array[], int size)
     fp = fopen("Record.csv","a");
     for(int index =0; index<size; index++) {
         s.id = index;
-        sprintf(s.count,"%d - %d\n", chrgSession[temp], chrgSession[temp + array[index]]);
+        sprintf(s.range,"%d-%d\n", chrgSession[temp], chrgSession[temp + array[index]]);
         s.count = array[index];
         temp = array[index]
     }
