@@ -65,9 +65,8 @@ void countRange(int array[], int size)
 void addInExcel(int array[])
 {
     FILE *fp;
-    fp = fopen("Record.csv","a+");
+    fp = fopen("Record.csv","w+");
     if (!fp) {
-        // Error in file opening
         printf("Can't open file\n");
     }
     else {
