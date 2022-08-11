@@ -16,10 +16,10 @@ void testpartition()
 
 void testsortRange()
 {
-    int testArray1[] = {30, 50, 40, 20};
+    int testArray1[] = {30, 50, 20};
     int testArray1Size = sizeof(testArray1)/sizeof(testArray1[0]);
     sortRange(testArray1, 0, testArray1Size-1);
-    assert((testArray1[0]==20) && (testArray1[1]==30) && (testArray1[2]==40) && (testArray1[3]==50));
+    assert((testArray1[0]==20) && (testArray1[1]==30) && (testArray1[2]==50));
 }
 
 void testchkrange()
