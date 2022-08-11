@@ -71,12 +71,13 @@ void addInExcel(int array[])
 {
     FILE *fp;
     fp = fopen("Record.csv","w");
-    sprintf(storedata.range,"%d-%d\n", chrgSession[0], chrgSession[3]);
-    storedata.count = array[0];
-    fwrite(&storedata, sizeof(storedata), 1, fp);
-    sprintf(storedata.range,"%d-%d\n", chrgSession[3], chrgSession[6]);
-    storedata.count = array[1];
-    fwrite(&storedata, sizeof(storedata), 1, fp);
+    fprintf(fp,"Range,\t Readings\n");
+    fprintf(fp,"%d-%d,\t %d\n", chrgSession[0], chrgSession[3], array[0]);
+    //storedata.count = array[0];
+    //fwrite(&storedata, sizeof(storedata), 1, fp);
+    fprintf(fp,"%d-%d,\t %d\n", chrgSession[3], chrgSession[6], array[1]);
+    //storedata.count = array[1];
+    //fwrite(&storedata, sizeof(storedata), 1, fp);
     fclose(fp);
 }
 
