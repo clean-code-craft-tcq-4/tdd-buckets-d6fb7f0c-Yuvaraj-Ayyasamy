@@ -67,7 +67,7 @@ void printRange(int array[], int size)
     int lowIndex = 0;
     int highIndex;
     printf("Range,\t Readings\n");
-    for(int index =0; index<size; index++, lowIndex+=array[index]) {
+    for(int index =0; index<size; index++, lowIndex+=(array[index]+1)) {
         highIndex = lowIndex + (array[index]-1);
         printf("%d-%d,\t %d\n", chrgSession[lowIndex], chrgSession[highIndex], array[index]);
     }
