@@ -42,7 +42,6 @@ void sortRange(int array[], int lowIndex, int highIndex)
 {  
     if (lowIndex < highIndex) {
         int pivot = partition(array, lowIndex, highIndex);
-        // Separately sort elements before & after partition
         sortRange(array, lowIndex, pivot - 1);
         sortRange(array, pivot + 1, highIndex);
     }
@@ -52,7 +51,7 @@ void countRange(int array[], int size)
 {  
     int index;
     for(index=0; index<size; index++) {
-        if ((array[index+1] == (array[index] + 1)) || (array[index+1] == array[index])) {
+        if (((array+index+1) == (array[index] + 1)) || ((array+index+1) == array[index])) {
             rangeCount[ranges] += 1;
         }
         else {
