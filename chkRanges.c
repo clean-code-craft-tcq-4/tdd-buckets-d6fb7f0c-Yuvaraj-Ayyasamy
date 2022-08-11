@@ -62,24 +62,13 @@ void countRange(int array[], int size)
     }
 }
 
-void addInExcel(int array[])
-{
-    FILE *fp;
-    fp = fopen("Record.csv","w+");
-    if (!fp) {
-        printf("Can't open file\n");
-    }
-    else {
-    fprintf(fp,"Range,\t Readings\n");
-    fprintf(fp,"%d-%d,\t %d\n", chrgSession[0], chrgSession[3], array[0]);
-    fprintf(fp,"%d-%d,\t %d\n", chrgSession[3], chrgSession[6], array[1]);
-    fclose(fp);
-    }
-}
-
 void printRange(int array[], int size)
-{  
-    for(int index =0; index<=size; index++) {
-        printf("count[%d] is %d\n", index, array[index]);
+{
+    int lowIndex = 0;
+    int highIndex;
+    printf("Range,\t Readings\n");
+    for(int index =0; index<size; index++, lowIndex+=array[index]) {
+        highIndex = lowIndex + (array[index]-1);
+        printf("%d-%d,\t %d\n", chrgSession[lowIndex], chrgSession[highIndex], array[index]);
     }
 }
