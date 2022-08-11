@@ -22,6 +22,17 @@ void testsortRange()
     assert((testArray1[0]==20) && (testArray1[1]==30) && (testArray1[2]==50));
 }
 
+void testcompareRange()
+{
+    int CurPosVal = 2;
+    int IncPosVal = 3;
+    assert(compareRange(CurPosVal, IncPosVal, (CurPosVal+1)) == 1);
+
+    int CurPosVal = 2;
+    int IncPosVal = 5;
+    assert(compareRange(CurPosVal, IncPosVal, (CurPosVal+1)) == 1);
+}
+
 void testcheckrange()
 {
     checkrange();
@@ -43,6 +54,7 @@ int main()
     testswapValues();
     testpartition();
     testsortRange();
+    testcompareRange();
     testcheckrange();
     testcountRange();
     return 0;
