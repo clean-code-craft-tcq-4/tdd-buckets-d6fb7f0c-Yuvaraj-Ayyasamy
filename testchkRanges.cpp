@@ -26,10 +26,10 @@ void testcompareRange()
 {
     int CurPosVal = 2;
     int IncPosVal = 3;
-    assert(compareRange(CurPosVal, IncPosVal, (CurPosVal+1)) == 1);
+    assert(compareRange(CurPosVal, IncPosVal, (CurPosVal+1)) == true);
     CurPosVal = 2;
     IncPosVal = 5;
-    assert(compareRange(CurPosVal, IncPosVal, (CurPosVal+1)) == 1);
+    assert(compareRange(CurPosVal, IncPosVal, (CurPosVal+1)) == FALSE);
 }
 
 void testcheckrange()
