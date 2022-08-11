@@ -51,7 +51,7 @@ void countRange(int array[], int size)
 {  
     int index;
     for(index=0; index<size; index++) {
-        if (((array+index+1) == (array[index] + 1)) || ((array+index+1) == array[index])) {
+        if (((array+index+1) == ((array+index) + 1)) || ((array+index+1) == (array+index))) {
             rangeCount[ranges] += 1;
         }
         else {
