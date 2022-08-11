@@ -6,10 +6,10 @@ int rangeCount[3] = {1, 1, 1};
 
 void checkrange() {
     int sizeOfchrgSess = sizeof(chrgSession) / sizeof(chrgSession[0]);
+    int sizeOfRngCnt = sizeof(rangeCount) / sizeof(rangeCount[0]);
     sortRange(chrgSession, 0, sizeOfchrgSess-1);
     countRange(chrgSession, sizeOfchrgSess);
-    printRange(rangeCount, 2);
-    addInExcel(rangeCount);
+    printRange(rangeCount, sizeOfRngCnt-1);
 }
 
 void swapValues(int* value1, int* value2) 
