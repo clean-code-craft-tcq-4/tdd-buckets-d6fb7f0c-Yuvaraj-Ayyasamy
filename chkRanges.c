@@ -47,10 +47,10 @@ void sortRange(int array[], int lowIndex, int highIndex)
     }
 } 
 
-bool compareRange(int CurPos, int IncPos, int CurPosInc)
+bool compareRange(int CurPosVal, int IncPosVal, int CurPosIncVal)
 {
-    bool limit1 = (IncPos == CurPos);
-    bool limit2 = (IncPos == CurPosInc);
+    bool limit1 = (IncPosVal == CurPosVal);
+    bool limit2 = (IncPosVal == CurPosIncVal);
     return (limit1 || limit2);
 }
 
