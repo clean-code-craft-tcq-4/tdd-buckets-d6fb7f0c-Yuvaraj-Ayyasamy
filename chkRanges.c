@@ -3,11 +3,6 @@
 int ranges = 0;
 int chrgSession[] = {3, 3, 5, 4, 10, 11, 12};
 int rangeCount[3] = {1, 1, 1};
-struct data
-{
-    char range[10];
-    int count;
-}storedata;
 
 void checkrange() {
     int sizeOfchrgSess = sizeof(chrgSession) / sizeof(chrgSession[0]);
@@ -70,14 +65,10 @@ void countRange(int array[], int size)
 void addInExcel(int array[])
 {
     FILE *fp;
-    fp = fopen("Record.csv","w");
+    fp = fopen("tdd-buckets-d6fb7f0c-Yuvaraj-Ayyasamy/Record.csv","a+");
     fprintf(fp,"Range,\t Readings\n");
     fprintf(fp,"%d-%d,\t %d\n", chrgSession[0], chrgSession[3], array[0]);
-    //storedata.count = array[0];
-    //fwrite(&storedata, sizeof(storedata), 1, fp);
     fprintf(fp,"%d-%d,\t %d\n", chrgSession[3], chrgSession[6], array[1]);
-    //storedata.count = array[1];
-    //fwrite(&storedata, sizeof(storedata), 1, fp);
     fclose(fp);
 }
 
