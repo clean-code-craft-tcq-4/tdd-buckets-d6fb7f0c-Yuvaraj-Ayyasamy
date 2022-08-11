@@ -1,13 +1,6 @@
 #include <stdio.h>
 #include <assert.h>
 
-struct data
-{
-    int id;
-    char range[10];
-    int count;
-}s;
-
 extern int rangeCount[];
 extern int chrgSession[];
 extern int rangeCount[];
