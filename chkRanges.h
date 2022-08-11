@@ -3,7 +3,6 @@
 
 extern int rangeCount[];
 extern int chrgSession[];
-extern int rangeCount[];
 
 void checkrange();
 void countRange(int array[], int size);
