@@ -10,5 +10,6 @@ void countRange(int array[], int size);
 void printRange(int array[], int size);
 void swapValues(int* value1, int* value2);
 void addInExcel(int array[]);
+bool compareRange(int CurPosVal, int IncPosVal, int CurPosIncVal);
 int partition(int array[], int lowIndex, int highIndex);
 void sortRange(int array[], int lowIndex, int highIndex);
