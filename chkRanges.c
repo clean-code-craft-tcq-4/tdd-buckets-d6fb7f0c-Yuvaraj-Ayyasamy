@@ -65,11 +65,17 @@ void countRange(int array[], int size)
 void addInExcel(int array[])
 {
     FILE *fp;
-    fp = fopen("tdd-buckets-d6fb7f0c-Yuvaraj-Ayyasamy/Record.csv","a+");
+    fp = fopen("Record.csv","a+");
+    if (!fp) {
+        // Error in file opening
+        printf("Can't open file\n");
+    }
+    else {
     fprintf(fp,"Range,\t Readings\n");
     fprintf(fp,"%d-%d,\t %d\n", chrgSession[0], chrgSession[3], array[0]);
     fprintf(fp,"%d-%d,\t %d\n", chrgSession[3], chrgSession[6], array[1]);
     fclose(fp);
+    }
 }
 
 void printRange(int array[], int size)
