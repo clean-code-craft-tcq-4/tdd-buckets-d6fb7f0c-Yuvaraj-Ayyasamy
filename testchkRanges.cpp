@@ -30,7 +30,7 @@ void testcheckrange()
     assert(rangeCount[2] == 1);
 }
 
-void testcheckRange()
+void testcountRange()
 {
     countRange(chrgSession, 7);
     assert(rangeCount[0] == 4);
