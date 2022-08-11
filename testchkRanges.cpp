@@ -22,9 +22,9 @@ void testsortRange()
     assert((testArray1[0]==20) && (testArray1[1]==30) && (testArray1[2]==50));
 }
 
-void testchkrange()
+void testcheckrange()
 {
-    chkrange();
+    checkrange();
     assert(rangeCount[0] == 4);
     assert(rangeCount[1] == 3);
     assert(rangeCount[2] == 1);
@@ -32,7 +32,7 @@ void testchkrange()
 
 void testcheckRange()
 {
-    checkRange(chrgSession, 7);
+    countRange(chrgSession, 7);
     assert(rangeCount[0] == 4);
     assert(rangeCount[1] == 3);
     assert(rangeCount[2] == 4);
@@ -43,7 +43,7 @@ int main()
     testswapValues();
     testpartition();
     testsortRange();
-    testchkrange();
-    testcheckRange();
+    testcheckrange();
+    testcountRange();
     return 0;
 }
