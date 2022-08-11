@@ -47,11 +47,18 @@ void sortRange(int array[], int lowIndex, int highIndex)
     }
 } 
 
+bool compareRange(int CurPos, int IncPos, int CurPosInc)
+{
+    bool limit1 = (IncPos == CurPos);
+    bool limit2 = (IncPos == CurPosInc);
+    return (limit1 || limit2);
+}
+
 void countRange(int array[], int size)
 {  
     int index;
     for(index=0; index<size; index++) {
-        if (((array+index+1) == ((array+index) + 1)) || ((array+index+1) == (array+index))) {
+        if (compareRange(array[index], array[index+1], (array[index]+1))) {
             rangeCount[ranges] += 1;
         }
         else {
