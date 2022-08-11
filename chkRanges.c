@@ -3,17 +3,11 @@
 int ranges = 0;
 int chrgSession[] = {3, 3, 5, 4, 10, 11, 12};
 int rangeCount[3] = {1, 1, 1};
-struct data
-{
-    int id;
-    char range[10];
-    int count;
-}s;
 
-void chkrange() {
+void checkrange() {
     int sizeOfchrgSess = sizeof(chrgSession) / sizeof(chrgSession[0]);
     sortRange(chrgSession, 0, sizeOfchrgSess-1);
-    checkRange(chrgSession, sizeOfchrgSess);
+    countRange(chrgSession, sizeOfchrgSess);
     printRange(rangeCount, 2);
     addInExcel(rangeCount);
 }
@@ -49,7 +43,7 @@ void sortRange(int array[], int lowIndex, int highIndex)
     }
 } 
 
-void checkRange(int array[], int size)
+void countRange(int array[], int size)
 {  
     int index;
     for(index=0; index<size; index++) {
@@ -65,7 +59,6 @@ void checkRange(int array[], int size)
 void addInExcel(int array[])
 {
     FILE *fp;
-    FILE *fp1;
     fp = fopen("Record.csv","w");
     s.id = 0;
     sprintf(s.range,"%d-%d\n", chrgSession[0], chrgSession[3]);
@@ -76,8 +69,8 @@ void addInExcel(int array[])
     s.count = array[1];
     fwrite(&s, sizeof(s), 1, fp);
     fclose(fp);
-    printf("Data Added Sucessfully");
 }
+
 void printRange(int array[], int size)
 {  
     for(int index =0; index<=size; index++) {
