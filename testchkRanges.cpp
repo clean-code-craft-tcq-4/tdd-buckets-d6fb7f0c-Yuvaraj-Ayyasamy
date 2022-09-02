@@ -48,7 +48,7 @@ void testcountRange()
 
 void testcheckRange()
 {
-    checkrange();
+    checkRange();
     assert((chrgSession[2] == 4) && (chrgSession[3] == 5));
 }
 
