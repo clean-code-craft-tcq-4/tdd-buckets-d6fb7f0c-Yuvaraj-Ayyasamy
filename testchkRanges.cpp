@@ -46,11 +46,10 @@ void testcountRange()
     assert(rangeCount[1] == 3);
 }
 
-void testcheckrange()
+void testcheckRange()
 {
     checkrange();
-    assert(chrgSession[2] == 4);
-    assert(chrgSession[3] == 5);
+    assert((chrgSession[2] == 4) && (chrgSession[3] == 5));
 }
 
 int main()
@@ -60,6 +59,6 @@ int main()
     testsortRange();
     testcompareRange();
     testcountRange();
-    testcheckrange();
+    testcheckRange();
     return 0;
 }
