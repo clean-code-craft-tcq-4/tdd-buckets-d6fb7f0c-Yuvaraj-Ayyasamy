@@ -3,7 +3,7 @@
 
 extern int chrgSession[];
 
-void checkrange();
+void checkRange();
 void countRange(int array[], int rangeCount[], int size);
 void printRange(int array[], int size);
 void swapValues(int* value1, int* value2);
