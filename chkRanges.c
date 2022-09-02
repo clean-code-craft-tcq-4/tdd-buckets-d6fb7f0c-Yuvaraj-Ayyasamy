@@ -1,14 +1,13 @@
 #include "chkRanges.h"
 
-int ranges = 0;
 int chrgSession[] = {3, 3, 5, 4, 10, 11, 12};
-int rangeCount[3] = {1, 1, 1};
 
 void checkrange() {
     int sizeOfchrgSess = sizeof(chrgSession) / sizeof(chrgSession[0]);
+    int rangeCount[3] = {1, 1, 1};
     int sizeOfRngCnt = sizeof(rangeCount) / sizeof(rangeCount[0]);
     sortRange(chrgSession, 0, sizeOfchrgSess-1);
-    countRange(chrgSession, sizeOfchrgSess);
+    countRange(chrgSession, rangeCount, sizeOfchrgSess);
     printRange(rangeCount, sizeOfRngCnt-1);
 }
 
@@ -49,9 +48,10 @@ bool compareRange(int CurPosVal, int IncPosVal, int CurPosIncVal)
     return (limit1 || limit2);
 }
 
-void countRange(int array[], int size)
+void countRange(int array[], int rangeCount[], int size)
 {  
     int index;
+    int ranges = 0;
     for(index=0; index<size; index++) {
         if (compareRange(array[index], array[index+1], (array[index]+1))) {
             rangeCount[ranges] += 1;
