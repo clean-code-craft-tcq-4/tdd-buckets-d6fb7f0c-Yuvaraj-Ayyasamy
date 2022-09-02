@@ -2,7 +2,7 @@
 
 int chrgSession[] = {3, 3, 5, 4, 10, 11, 12};
 
-void checkrange() {
+void checkRange() {
     int sizeOfchrgSess = sizeof(chrgSession) / sizeof(chrgSession[0]);
     int rangeCount[3] = {1, 1, 1};
     int sizeOfRngCnt = sizeof(rangeCount) / sizeof(rangeCount[0]);
