@@ -39,11 +39,18 @@ void testcompareRange()
 void testcountRange()
 {
     int rangeCount[3] = {1, 1, 1};
-    int chrgSession[] = {3, 3, 4, 5, 10, 11, 12};
-    int sizeOfchrgSess = sizeof(chrgSession) / sizeof(chrgSession[0]);
-    countRange(chrgSession, rangeCount, sizeOfchrgSess);
+    int chrgSessions[] = {3, 3, 4, 5, 10, 11, 12};
+    int sizeOfchrgSess = sizeof(chrgSessions) / sizeof(chrgSessions[0]);
+    countRange(chrgSessions, rangeCount, sizeOfchrgSess);
     assert(rangeCount[0] == 4);
     assert(rangeCount[1] == 3);
+}
+
+void testcheckrange()
+{
+    checkrange();
+    assert(chrgSession[2] == 4);
+    assert(chrgSession[3] == 5);
 }
 
 int main()
@@ -53,5 +60,6 @@ int main()
     testsortRange();
     testcompareRange();
     testcountRange();
+    testcheckrange();
     return 0;
 }
