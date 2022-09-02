@@ -1,8 +1,6 @@
 #include <stdio.h>
 #include <assert.h>
 
-extern int chrgSession[];
-
 void checkrange();
 void countRange(int array[], int rangeCount[], int size);
 void printRange(int array[], int size);
