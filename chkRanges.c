@@ -60,6 +60,7 @@ void countRange(int array[], int rangeCount[], int size)
             ranges++;
         }
     }
+printf("%d, %d", rangeCount[0], rangeCount[1]);
 }
 
 void printRange(int array[], int size)
