@@ -36,17 +36,11 @@ void testcompareRange()
     assert(compareRange(CurPosVal, IncPosVal, (CurPosVal+1)) == false);
 }
 
-void testcheckrange()
-{
-    checkrange();
-    assert(rangeCount[0] == 4);
-    assert(rangeCount[1] == 3);
-    assert(rangeCount[2] == 1);
-}
-
 void testcountRange()
 {
-    countRange(chrgSession, 7);
+    int sizeOfchrgSess = sizeof(chrgSession) / sizeof(chrgSession[0]);
+    int rangeCount[3] = {1, 1, 1};
+    countRange(chrgSession, rangeCount, sizeOfchrgSess);
     assert(rangeCount[0] == 4);
     assert(rangeCount[1] == 3);
     assert(rangeCount[2] == 4);
@@ -58,7 +52,6 @@ int main()
     testpartition();
     testsortRange();
     testcompareRange();
-    testcheckrange();
     testcountRange();
     return 0;
 }
