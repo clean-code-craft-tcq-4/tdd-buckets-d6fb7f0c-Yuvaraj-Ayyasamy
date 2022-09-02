@@ -40,7 +40,7 @@ void testcountRange()
 {
     int rangeCount[3] = {1, 1, 1};
     countRange(chrgSession, rangeCount, 7);
-    assert(rangeCount[0] == 3);
+    assert(rangeCount[0] == 5);
     assert(rangeCount[1] == 2);
 }
 
