@@ -17,7 +17,7 @@ int AddCurrentAmpList(int A2DConvertData) {
 void checkRange(int chrgSession[], int sizeOfchrgSess, int rangeCount[], int sizeOfRngCnt) {
     sortRange(chrgSession, 0, sizeOfchrgSess-1);
     countRange(chrgSession, rangeCount, sizeOfchrgSess);
-    printRange(rangeCount, sizeOfRngCnt-1);
+    printRange(chrgSession, rangeCount, sizeOfRngCnt-1);
 }
 
 void swapValues(int* value1, int* value2) 
@@ -71,7 +71,7 @@ void countRange(int array[], int rangeCount[], int size)
     }
 }
 
-void printRange(int array[], int size)
+void printRange(int chrgSession[], int array[], int size)
 {
     int lowIndex = 0;
     int highIndex;
