@@ -1,10 +1,7 @@
 #include "chkRanges.h"
 
-int chrgSession[] = {3, 3, 5, 4, 10, 11, 12};
-
-void checkRange() {
+void checkRange(int chrgSession[], int rangeCount[]) {
     int sizeOfchrgSess = sizeof(chrgSession) / sizeof(chrgSession[0]);
-    int rangeCount[3] = {1, 1, 1};
     int sizeOfRngCnt = sizeof(rangeCount) / sizeof(rangeCount[0]);
     sortRange(chrgSession, 0, sizeOfchrgSess-1);
     countRange(chrgSession, rangeCount, sizeOfchrgSess);
