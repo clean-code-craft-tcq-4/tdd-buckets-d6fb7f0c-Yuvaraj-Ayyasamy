@@ -1,6 +1,8 @@
 #include "A2DConverter.h"
 #include "chkRanges.h"
 
+void (*alertCall[2]) (int A2DConvertData);
+
 int ADCRangeCheck(int ADCData, ADCTypes ADCType) {
     int result = OUTOFF_RANGE;
     if (ADCData > minRangeADC(ADCType) && ADCData <= maxRangeADC(ADCType)) {
