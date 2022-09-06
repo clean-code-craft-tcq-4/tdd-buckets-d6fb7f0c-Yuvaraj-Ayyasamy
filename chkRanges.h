@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include <assert.h>
-
+#include "A2DConverter.h"
 //extern int chrgSession[];
 //int chrgSession[] = {3, 3, 5, 4, 10, 11, 12};
 //int rangeCount[3] = {1, 1, 1};
