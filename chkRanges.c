@@ -1,4 +1,18 @@
 #include "chkRanges.h"
+#include "A2DConverter.h"
+
+int ampList[AMPARRAYSIZE];
+
+int AddCurrentAmpList(int A2DConvertData) {
+    int retStatus = OUTOFF_RANGE;
+    static int index = 0;
+    if ( index < AMPARRAYSIZE) {
+        retStatus = INSIDE_RANGE;
+        ampList[index] = A2DConvertData;
+        index++;
+    }
+    return retStatus;
+}
 
 void checkRange(int chrgSession[], int rangeCount[]) {
     int sizeOfchrgSess = sizeof(chrgSession) / sizeof(chrgSession[0]);
