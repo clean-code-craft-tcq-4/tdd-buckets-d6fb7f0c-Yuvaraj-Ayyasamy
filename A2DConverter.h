@@ -32,6 +32,7 @@ enum ADCType {
 int ADCRangeCheck(int ADCData, int ADCType);
 int A2D12bitConverter(int ADCData, int ADCType);
 int A2D10bitConverter(int ADCData, int ADCType);
+int A2DConverter(int ADCData, int ADCType);
 void find_convertedAmpere_RangeList(int convertedData);
 void sendToController(int A2DConvertData);
 void sendToEmail(int A2DConvertData);
