@@ -39,7 +39,7 @@ void testcompareRange()
 void testcountRange()
 {
     int rangeCount[3] = {1, 1, 1};
-    int chrgSessions[] = {3, 3, 4, 5, 10, 11, 12};
+    int chrgSessions[7] = {3, 3, 4, 5, 10, 11, 12};
     int sizeOfchrgSess = sizeof(chrgSessions) / sizeof(chrgSessions[0]);
     countRange(chrgSessions, rangeCount, sizeOfchrgSess);
     assert(rangeCount[0] == 4);
