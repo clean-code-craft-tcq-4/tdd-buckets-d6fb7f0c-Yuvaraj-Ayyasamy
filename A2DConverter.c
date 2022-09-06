@@ -2,11 +2,11 @@
 #include "chkRanges.h"
 
 int ADCRangeCheck(int ADCData, ADCTypes ADCType) {
+    int result = OUTOFF_RANGE;
     if (ADCData > minRangeADC(ADCType) && ADCData <= maxRangeADC(ADCType)) {
-	return INSIDE_RANGE;
-    } else {
-	return OUTOFF_RANGE;
+	result = INSIDE_RANGE;
     }
+    return result;
 }
 
 int A2D12bitConverter(int ADCData, ADCTypes ADCType) {
@@ -64,7 +64,7 @@ bool processADCSensorData(int ADCData, ADCTypes ADCType, int A2DConvertData, Ale
 	}
     } else {
 	A2DConvertData = maxRangeADC(ADCType)+1;
-	alarmOutOfRange(A2DConvertData);
+	alarmOutOfRange(A2DConvertData, alertType);
 	//(*alertType) (A2DConvertData);
     }
     return errorStatus;
