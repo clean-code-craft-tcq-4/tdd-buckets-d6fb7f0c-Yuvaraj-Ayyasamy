@@ -40,9 +40,9 @@ void sendToEmail(int A2DConvertData) {
 
 void alarmOutOfRange(int A2DConvertData, AlertTypes alertType) 
 {
-    alertType[0] = sendToController;
-    alertType[1] = sendToEmail;
-    (*alertType[alertType]) (A2DConvertData);
+    alertCall[0] = sendToController;
+    alertCall[1] = sendToEmail;
+    (*alertCall[alertType]) (A2DConvertData);
 }
 
 int createAmpRangeList(int A2DConvertData) {
@@ -51,14 +51,10 @@ int createAmpRangeList(int A2DConvertData) {
 
 bool processADCSensorData(int ADCData, ADCTypes ADCType, int A2DConvertData, AlertTypes alertType) {
     int errorStatus;
-
     errorStatus = ADCRangeCheck(ADCData, ADCType);
     if (errorStatus == INSIDE_RANGE) {
     	A2DConvertData = A2DConverter(ADCData, ADCType);
         errorStatus = createAmpRangeList(A2DConvertData);
-	if (errorStatus != INSIDE_RANGE) {
-	    break;
-	}
     } else {
 	A2DConvertData = maxRangeADC(ADCType)+1;
 	alarmOutOfRange(A2DConvertData, alertType);
