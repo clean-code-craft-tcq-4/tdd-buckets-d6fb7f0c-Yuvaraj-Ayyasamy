@@ -48,8 +48,11 @@ void testcountRange()
 
 void testcheckRange()
 {
-    checkRange();
-    assert((chrgSession[2] == 4) && (chrgSession[3] == 5));
+    int rangeCount[3] = {1, 1, 1};
+    int chrgSessions[] = {3, 2, 5, 4, 12, 11, 10};
+    checkRange(chrgSessions, rangeCount);
+    assert((rangeCount[0] == 4) && (rangeCount[1] == 3));
+    assert((chrgSession[2] == 4) && (chrgSession[6] == 12));
 }
 
 int main()
