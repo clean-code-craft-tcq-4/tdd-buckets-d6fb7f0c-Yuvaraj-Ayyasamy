@@ -46,10 +46,7 @@ void alarmOutOfRange(int A2DConvertData, AlertTypes alertType)
 }
 
 int createAmpRangeList(int A2DConvertData) {
-    int data = A2DConvertData;
-    int retStatus = OUTOFF_RANGE; // Out of index
-    retStatus = AddCurrentAmpList(&data);
-    return retStatus;
+    return AddCurrentAmpList(A2DConvertData);
 }
 
 bool processADCSensorData(int ADCData, ADCTypes ADCType, int A2DConvertData, AlertTypes alertType) {
@@ -65,7 +62,6 @@ bool processADCSensorData(int ADCData, ADCTypes ADCType, int A2DConvertData, Ale
     } else {
 	A2DConvertData = maxRangeADC(ADCType)+1;
 	alarmOutOfRange(A2DConvertData, alertType);
-	//(*alertType) (A2DConvertData);
     }
     return errorStatus;
 } 
