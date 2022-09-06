@@ -14,9 +14,7 @@ int AddCurrentAmpList(int A2DConvertData) {
     return retStatus;
 }
 
-void checkRange(int chrgSession[], int rangeCount[]) {
-    int sizeOfchrgSess = sizeof(chrgSession) / sizeof(chrgSession[0]);
-    int sizeOfRngCnt = sizeof(rangeCount) / sizeof(rangeCount[0]);
+void checkRange(int chrgSession[], int sizeOfchrgSess, int rangeCount[], int sizeOfRngCnt) {
     sortRange(chrgSession, 0, sizeOfchrgSess-1);
     countRange(chrgSession, rangeCount, sizeOfchrgSess);
     printRange(rangeCount, sizeOfRngCnt-1);
