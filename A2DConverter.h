@@ -35,7 +35,6 @@ typedef enum {
     printf("To: %s\n Hi, %s %d !!!\n", RECEPIENT, ERROR_MSG, A2DConvertData);  \
 })
 
-void (*alertCall[2]) (int A2DConvertData);
 int ADCRangeCheck(int ADCData, ADCTypes ADCType);
 int A2D12bitConverter(int ADCData, ADCTypes ADCType);
 int A2D10bitConverter(int ADCData, ADCTypes ADCType);
