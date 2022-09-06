@@ -37,7 +37,7 @@ void find_convertedAmpere_RangeList(int convertedData) {
 	find_currentRangeList(&data, 1);	
 }
 
-bool processADCSensorData(int ADCData, int ADCType, int *A2DConvertData, void (*alertType) (int A2DConvertData)) {
+bool processADCSensorData(int ADCData, int ADCType, int A2DConvertData, void (*alertType) (int A2DConvertData)) {
 	int errorStatus;
 	
     errorStatus = ADCRangeCheck(ADCData, ADCType);
