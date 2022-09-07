@@ -17,7 +17,7 @@ typedef enum {
 #define OUTOFF_RANGE          0
 #define minRangeADC(ADCType)  0
 #define maxRangeADC(ADCType)  (pow(2, (int)ADCType)-2)
-#define AMPRANGE              10
+#define AMPRANGE(ADCType)     ((ADCType == 12)?10:15)
 
 #define TWELVEBITMAXRANGE     (pow(2, TwelveBitADC)-2)
 #define TENBITMINRANGE        0
