@@ -89,8 +89,8 @@ void testADCRangeCheck()
     assert(INSIDE_RANGE == ADCRangeCheck(4094, TwelveBitADC));
     assert(OUTOFF_RANGE == ADCRangeCheck(4095, TwelveBitADC));
     assert(INSIDE_RANGE == ADCRangeCheck(0, TenBitADC));
-    assert(INSIDE_RANGE == ADCRangeCheck(1023, TenBitADC));
-    assert(OUTOFF_RANGE == ADCRangeCheck(1024, TenBitADC));
+    assert(INSIDE_RANGE == ADCRangeCheck(1022, TenBitADC));
+    assert(OUTOFF_RANGE == ADCRangeCheck(1023, TenBitADC));
 }
 
 void testA2D12bitConverter()
