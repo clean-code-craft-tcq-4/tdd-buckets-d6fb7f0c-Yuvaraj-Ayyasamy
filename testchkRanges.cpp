@@ -53,7 +53,6 @@ void testcheckRange()
     int chrgSession[7] = {3, 2, 5, 4, 12, 11, 10};
     int sizeOfchrgSess = sizeof(chrgSession) / sizeof(chrgSession[0]);
     int rangeCount[3] = {1, 1, 1};
-    int sizeOfRngCnt = sizeof(rangeCount) / sizeof(rangeCount[0]);
     checkRange(chrgSession, sizeOfchrgSess, rangeCount);
     assert((rangeCount[0] == 4) && (rangeCount[1] == 3));
     assert((chrgSession[2] == 4) && (chrgSession[6] == 12));
@@ -135,7 +134,6 @@ void testprocessADCSensorData()
 {
     int Amp12bitArray[4] = {0, 1146, 4094, 4095};
     int Amp10bitArray[4] = {0, 511, 1022, 1023};
-    int status = INSIDE_RANGE;
     int index;
     for (index=0; index<3; index++)
         assert(OUTOFF_RANGE != processADCSensorData(Amp12bitArray[index], TwelveBitADC, ToController));
