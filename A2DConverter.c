@@ -51,8 +51,9 @@ int createAmpRangeList(int A2DConvertData) {
     return AddCurrentAmpList(A2DConvertData);
 }
 
-bool processADCSensorData(int ADCData, ADCTypes ADCType, int A2DConvertData, AlertTypes alertType) {
+bool processADCSensorData(int ADCData, ADCTypes ADCType, AlertTypes alertType) {
     int errorStatus;
+    int A2DConvertData;
     errorStatus = ADCRangeCheck(ADCData, ADCType);
     if (errorStatus == INSIDE_RANGE) {
     	A2DConvertData = A2DConverter(ADCData, ADCType);
