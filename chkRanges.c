@@ -12,14 +12,17 @@ int AddCurrentAmpList(int A2DConvertData) {
         index++;
     } else {
         index = 0;
+        int rangecount[AMPARRAYSIZE] = { 1, 1, 1, 1, 1, 1, 1};
+        checkRange(ampList, AMPARRAYSIZE, rangecount, AMPARRAYSIZE);
     }
     return retStatus;
 }
 
 void checkRange(int chrgSession[], int sizeOfchrgSess, int rangeCount[], int sizeOfRngCnt) {
+    int rangecnt = sizeOfRngCnt;
     sortRange(chrgSession, 0, sizeOfchrgSess-1);
-    countRange(chrgSession, rangeCount, sizeOfchrgSess);
-    printRange(chrgSession, rangeCount, sizeOfRngCnt-1);
+    rangecnt = countRange(chrgSession, rangeCount, sizeOfchrgSess);
+    printRange(chrgSession, rangeCount, rangecnt);
 }
 
 void swapValues(int* value1, int* value2) 
@@ -59,7 +62,7 @@ bool compareRange(int CurPosVal, int IncPosVal, int CurPosIncVal)
     return (limit1 || limit2);
 }
 
-void countRange(int array[], int rangeCount[], int size)
+int countRange(int array[], int rangeCount[], int size)
 {  
     int index;
     int ranges = 0;
@@ -71,6 +74,7 @@ void countRange(int array[], int rangeCount[], int size)
             ranges++;
         }
     }
+    return ranges;
 }
 
 void printRange(int chrgSession[], int array[], int size)
