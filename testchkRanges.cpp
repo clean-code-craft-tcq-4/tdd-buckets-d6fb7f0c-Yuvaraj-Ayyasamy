@@ -57,6 +57,35 @@ void testcheckRange()
     assert((chrgSession[2] == 4) && (chrgSession[6] == 12));
 }
 
+void testAddCurrentAmpList()
+{
+    int AmpArray[7] = {3, 2, 5, 4, 12, 11, 10};
+    int AmpArrayOutLimit[8] = {3, 2, 5, 4, 6, 12, 11, 10};
+    int status = INSIDE_RANGE;
+    for (int index=0; index<7; index++) {
+         status = AddCurrentAmpList(AmpArray[index]);
+         if (status != INSIDE_RANGE)
+             break;
+    }
+    assert(status != OUTOFF_RANGE);
+    status = INSIDE_RANGE;
+    for (int index=0; index<7; index++) {
+         status = AddCurrentAmpList(AmpArray[index]);
+         if (status != INSIDE_RANGE)
+             break;
+    }
+    assert(status == OUTOFF_RANGE);
+}
+
+/*void testprocessADCSensorData()
+{
+    int Amp12bitArray[7] = {3, 2, 5, 4, 12, 11, 10};
+    int Amp10bitArray[7] = {3, 2, 5, 4, 12, 11, 10};
+    int status = INSIDE_RANGE;
+    
+    processADCSensorData(Amp10bitArray[0], TwelveBitADC,  
+}*/
+
 int main()
 {
     testswapValues();
@@ -65,5 +94,7 @@ int main()
     testcompareRange();
     testcountRange();
     testcheckRange();
+    testAddCurrentAmpList();
+    //testprocessADCSensorData();
     return 0;
 }
