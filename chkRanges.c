@@ -10,6 +10,8 @@ int AddCurrentAmpList(int A2DConvertData) {
         retStatus = INSIDE_RANGE;
         ampList[index] = A2DConvertData;
         index++;
+    } else {
+        index = 0;
     }
     return retStatus;
 }
