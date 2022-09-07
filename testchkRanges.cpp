@@ -62,7 +62,6 @@ void testcheckRange()
 void testAddCurrentAmpList()
 {
     int AmpArray[7] = {3, 2, 5, 4, 12, 11, 10};
-    //int AmpArrayOutLimit[8] = {3, 2, 5, 4, 6, 12, 11, 10};
     int status = INSIDE_RANGE;
     for (int index=0; index<7; index++) {
          status = AddCurrentAmpList(AmpArray[index]);
@@ -70,24 +69,81 @@ void testAddCurrentAmpList()
              break;
     }
     assert(status != OUTOFF_RANGE);
+}
 
-    /*status = INSIDE_RANGE;
+void testAddCurrentAmpListOutOfRange()
+{
+    int AmpArrayOutLimit[8] = {3, 2, 5, 4, 6, 12, 11, 10};
+    int status = INSIDE_RANGE;
     for (int index=0; index<8; index++) {
          status = AddCurrentAmpList(AmpArrayOutLimit[index]);
          if (status != INSIDE_RANGE)
              break;
     }
-    assert(status == OUTOFF_RANGE);*/
+    assert(status == OUTOFF_RANGE);
 }
 
-/*void testprocessADCSensorData()
+void testADCRangeCheck()
 {
-    int Amp12bitArray[7] = {3, 2, 5, 4, 12, 11, 10};
-    int Amp10bitArray[7] = {3, 2, 5, 4, 12, 11, 10};
+    assert(INSIDE_RANGE == ADCRangeCheck(0, TwelveBitADC));
+    assert(INSIDE_RANGE == ADCRangeCheck(4094, TwelveBitADC));
+    assert(OUTOFF_RANGE == ADCRangeCheck(4095, TwelveBitADC));
+    assert(INSIDE_RANGE == ADCRangeCheck(0, TenBitADC));
+    assert(INSIDE_RANGE == ADCRangeCheck(1023, TenBitADC));
+    assert(OUTOFF_RANGE == ADCRangeCheck(1024, TenBitADC));
+}
+
+void testA2D12bitConverter()
+{
+    assert(3 == A2D12bitConverter(1146, TwelveBitADC));
+    assert(10 == A2D12bitConverter(4094, TwelveBitADC));
+}
+
+void testA2D10bitConverter()
+{
+    assert(-15 == A2D10bitConverter(0, TenBitADC));
+    assert(0 == A2D10bitConverter(511, TenBitADC));
+    assert(15 == A2D10bitConverter(1022, TenBitADC));
+}
+
+void testA2DConverter()
+{
+    assert(3 == A2DConverter(1146, TwelveBitADC));
+    assert(10 == A2DConverter(4094, TwelveBitADC));
+    assert(-15 == A2DConverter(0, TenBitADC));
+    assert(0 == A2DConverter(511, TenBitADC));
+    assert(15 == A2DConverter(1022, TenBitADC));
+}
+
+void testcreateAmpRangeList()
+{
+    int AmpArrayOutLimit[8] = {3, 2, 5, 4, 6, 12, 11, 10};
     int status = INSIDE_RANGE;
-    
-    processADCSensorData(Amp10bitArray[0], TwelveBitADC,  
-}*/
+    int index;
+    for (index=0; index<7; index++) {
+         status = createAmpRangeList(AmpArrayOutLimit[index]);
+         if (status != INSIDE_RANGE)
+             break;
+    }
+    assert(status != OUTOFF_RANGE);
+
+    status = createAmpRangeList(AmpArrayOutLimit[index]);
+    assert(status == OUTOFF_RANGE);
+}
+
+void testprocessADCSensorData()
+{
+    int Amp12bitArray[4] = {0, 1146, 4094, 4095};
+    int Amp10bitArray[4] = {0, 511, 1022, 1023};
+    int status = INSIDE_RANGE;
+    int index;
+    for (index=0; index<3; index++)
+        assert(OUTOFF_RANGE != processADCSensorData(Amp12bitArray[index], TwelveBitADC, ToController));
+    assert(OUTOFF_RANGE == processADCSensorData(Amp12bitArray[index], TwelveBitADC, ToController));
+    for (index=0; index<3; index++)
+        assert(OUTOFF_RANGE != processADCSensorData(Amp10bitArray[index], TenBitADC, ToMail));
+    assert(OUTOFF_RANGE == processADCSensorData(Amp10bitArray[index], TenBitADC, ToMail)); 
+}
 
 int main()
 {
@@ -98,6 +154,6 @@ int main()
     testcountRange();
     testcheckRange();
     testAddCurrentAmpList();
-    //testprocessADCSensorData();
+    testprocessADCSensorData();
     return 0;
 }
