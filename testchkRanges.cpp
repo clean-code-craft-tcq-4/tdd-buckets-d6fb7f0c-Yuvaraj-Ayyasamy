@@ -62,7 +62,7 @@ void testcheckRange()
 void testAddCurrentAmpList()
 {
     int AmpArray[7] = {3, 2, 5, 4, 12, 11, 10};
-    int AmpArrayOutLimit[8] = {3, 2, 5, 4, 6, 12, 11, 10};
+    //int AmpArrayOutLimit[8] = {3, 2, 5, 4, 6, 12, 11, 10};
     int status = INSIDE_RANGE;
     for (int index=0; index<7; index++) {
          status = AddCurrentAmpList(AmpArray[index]);
@@ -71,13 +71,13 @@ void testAddCurrentAmpList()
     }
     assert(status != OUTOFF_RANGE);
 
-    status = INSIDE_RANGE;
+    /*status = INSIDE_RANGE;
     for (int index=0; index<8; index++) {
          status = AddCurrentAmpList(AmpArrayOutLimit[index]);
          if (status != INSIDE_RANGE)
              break;
     }
-    assert(status == OUTOFF_RANGE);
+    assert(status == OUTOFF_RANGE);*/
 }
 
 /*void testprocessADCSensorData()
