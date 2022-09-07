@@ -154,6 +154,7 @@ int main()
     testcountRange();
     testcheckRange();
     testAddCurrentAmpList();
-    testprocessADCSensorData();
+    testAddCurrentAmpListOutOfRange();
+    //testprocessADCSensorData();
     return 0;
 }
