@@ -19,6 +19,7 @@ int A2D10bitConverter(int ADCData, ADCTypes ADCType) {
     int result = round((AMPRANGE * ADCData)/maxRangeADC(ADCType));
     if (ADCData < (maxRangeADC(ADCType)/2))
 	result = 0 - result;
+    printf("%d \n", result);
     return result;
 }
 
