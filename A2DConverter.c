@@ -12,11 +12,11 @@ int ADCRangeCheck(int ADCData, ADCTypes ADCType) {
 }
 
 int A2D12bitConverter(int ADCData, ADCTypes ADCType) {
-    return round((AMPRANGE * ADCData)/maxRangeADC(ADCType));
+    return round((AMPRANGE(ADCType) * ADCData)/maxRangeADC(ADCType));
 }
 
 int A2D10bitConverter(int ADCData, ADCTypes ADCType) {
-    return round((15 * (ADCData-(maxRangeADC(ADCType)/2)))/(maxRangeADC(ADCType)/2));
+    return round((AMPRANGE(ADCType) * (ADCData-(maxRangeADC(ADCType)/2)))/(maxRangeADC(ADCType)/2));
 }
 
 int A2DConverter(int ADCData, ADCTypes ADCType) {
