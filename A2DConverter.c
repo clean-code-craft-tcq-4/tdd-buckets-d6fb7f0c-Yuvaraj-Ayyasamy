@@ -5,7 +5,7 @@ void (*alertCall[2]) (int A2DConvertData);
 
 int ADCRangeCheck(int ADCData, ADCTypes ADCType) {
     int result = OUTOFF_RANGE;
-    if (ADCData > minRangeADC(ADCType) && ADCData <= maxRangeADC(ADCType)) {
+    if (ADCData >= minRangeADC(ADCType) && ADCData <= maxRangeADC(ADCType)) {
 	result = INSIDE_RANGE;
     }
     return result;
