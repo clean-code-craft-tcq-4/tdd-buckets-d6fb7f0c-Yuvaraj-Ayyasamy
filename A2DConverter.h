@@ -43,4 +43,4 @@ int createAmpRangeList(int A2DConvertData);
 void sendToController(int A2DConvertData);
 void sendToEmail(int A2DConvertData);
 void alarmOutOfRange(int A2DConvertData, AlertTypes alertType);
-bool processADCSensorData(int ADCData, ADCTypes ADCType, int A2DConvertData, AlertTypes alertType);
+bool processADCSensorData(int ADCData, ADCTypes ADCType, AlertTypes alertType);
