@@ -4,7 +4,7 @@
 extern int ampList[];
 
 int AddCurrentAmpList(int A2DConvertData);
-void checkRange(int chrgSession[], int sizeOfchrgSess, int rangeCount[], int sizeOfRngCnt);
+void checkRange(int chrgSession[], int sizeOfchrgSess, int rangeCount[]);
 int countRange(int array[], int rangeCount[], int size);
 void printRange(int chrgSession[], int array[], int size);
 void swapValues(int* value1, int* value2);
