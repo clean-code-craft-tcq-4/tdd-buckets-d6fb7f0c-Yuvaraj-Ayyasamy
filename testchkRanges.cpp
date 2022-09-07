@@ -101,6 +101,9 @@ void testA2D12bitConverter()
 
 void testA2D10bitConverter()
 {
+    A2D10bitConverter(0, TenBitADC);
+    A2D10bitConverter(511, TenBitADC);
+    A2D10bitConverter(1022, TenBitADC);
     assert(-15 == A2D10bitConverter(0, TenBitADC));
     assert(0 == A2D10bitConverter(511, TenBitADC));
     assert(15 == A2D10bitConverter(1022, TenBitADC));
