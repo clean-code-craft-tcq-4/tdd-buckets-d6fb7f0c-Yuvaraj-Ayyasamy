@@ -1,4 +1,6 @@
 #include "chkRanges.h"
+#include "A2DConverter.h"
+
 void testswapValues()
 {
     int testValue1 = 10, testValue2 = 20;
@@ -68,9 +70,10 @@ void testAddCurrentAmpList()
              break;
     }
     assert(status != OUTOFF_RANGE);
+
     status = INSIDE_RANGE;
-    for (int index=0; index<7; index++) {
-         status = AddCurrentAmpList(AmpArray[index]);
+    for (int index=0; index<8; index++) {
+         status = AddCurrentAmpList(AmpArrayOutLimit[index]);
          if (status != INSIDE_RANGE)
              break;
     }
