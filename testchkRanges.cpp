@@ -155,6 +155,10 @@ int main()
     testcheckRange();
     testAddCurrentAmpList();
     testAddCurrentAmpListOutOfRange();
+    testA2D12bitConverter();
+    testA2D10bitConverter();
+    testADCRangeCheck();
+    testA2DConverter();
     //testprocessADCSensorData();
     return 0;
 }
